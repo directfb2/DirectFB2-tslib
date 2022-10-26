@@ -1,3 +1,24 @@
+commit af11a974b16c03328fab83a689695dd825bad631
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Wed Oct 26 10:33:39 2022 +0200
+
+    Add missing D_FREE() for device_names
+
+commit 9f84dfeb4173577040876fd59f49bd29f2d2fae4
+Merge: ef2bdb3 eabaae6
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Thu Jun 2 19:28:27 2022 +0200
+
+    Merge pull request #1 from caramelli/master
+    
+    tslib input driver
+
+commit eabaae6bbc3ce59c5f5cb32d4d2062172dbb3b48
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Thu Jun 2 19:26:19 2022 +0200
+
+    Add ChangeLog
+
 commit 8f4a366c518f2d085125dfab22d357d00f7c7243
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Thu Jun 2 19:25:47 2022 +0200
