@@ -196,6 +196,17 @@ driver_get_available()
      char         *tsdev;
      char          buf[32];
 
+     if (num_devices) {
+          for (i = 0; i < num_devices; i++) {
+               D_FREE( device_names[i] );
+               device_names[i] = NULL;
+          }
+
+          num_devices = 0;
+
+          return 0;
+     }
+
      /* Use the devices specified in the configuration. */
      if ((value = direct_config_get_value( "tslib-devices" ))) {
           const char *device;
