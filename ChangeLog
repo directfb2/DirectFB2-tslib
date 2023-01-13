@@ -1,3 +1,24 @@
+commit 001ed29f134340c6d5a473aa0fff860f7acec02a
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Fri Jan 13 09:19:49 2023 +0100
+
+    Meson: Add max-slots option
+
+commit f0dc2f3bcab47ea9a62186762ae7b69e96f870e2
+Merge: 9f84dfe 93fc73d
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Wed Oct 26 10:34:12 2022 +0200
+
+    Merge pull request #2 from caramelli/master
+    
+    Add missing D_FREE() for device_names
+
+commit 93fc73d62116f647f1db1a582a8866bb086b4224
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Wed Oct 26 10:33:52 2022 +0200
+
+    Update ChangeLog
+
 commit af11a974b16c03328fab83a689695dd825bad631
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Wed Oct 26 10:33:39 2022 +0200
