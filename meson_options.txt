@@ -14,18 +14,7 @@
 #  License along with this library; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 
-project('DirectFB2-tslib', 'c',
-        version: '2.0.0')
-
-directfb_dep = dependency('directfb-internal')
-
-moduledir = directfb_dep.get_pkgconfig_variable('moduledir')
-
-tslib_dep = dependency('tslib')
-
-library('directfb_tslib',
-        'tslib.c',
-        c_args: '-DMAX_TSLIB_SLOTS=' + get_option('max-slots').to_string(),
-        dependencies: [directfb_dep, tslib_dep],
-        install: true,
-        install_dir: join_paths(moduledir, 'inputdrivers'))
+option('max-slots',
+       type: 'integer',
+       value: '10',
+       description: 'Maximum number of slots for tslib')
