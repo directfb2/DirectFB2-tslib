@@ -43,7 +43,6 @@ typedef struct {
 } tslibData;
 
 #define MAX_TSLIB_DEVICES 16
-#define MAX_TSLIB_SLOTS   10
 
 /* Touchscreen devices are stored in the device_names array. */
 static char *device_names[MAX_TSLIB_DEVICES];
@@ -256,19 +255,19 @@ driver_get_available()
 }
 
 static void
-driver_get_info( InputDriverInfo *info )
+driver_get_info( InputDriverInfo *driver_info )
 {
-     info->version.major = 0;
-     info->version.minor = 1;
+     driver_info->version.major = 0;
+     driver_info->version.minor = 1;
 
-     snprintf( info->name,   DFB_INPUT_DRIVER_INFO_NAME_LENGTH,   "tslib" );
-     snprintf( info->vendor, DFB_INPUT_DRIVER_INFO_VENDOR_LENGTH, "DirectFB" );
+     snprintf( driver_info->name,   DFB_INPUT_DRIVER_INFO_NAME_LENGTH,   "tslib" );
+     snprintf( driver_info->vendor, DFB_INPUT_DRIVER_INFO_VENDOR_LENGTH, "DirectFB" );
 }
 
 static DFBResult
 driver_open_device( CoreInputDevice  *device,
                     unsigned int      number,
-                    InputDeviceInfo  *info,
+                    InputDeviceInfo  *device_info,
                     void            **driver_data )
 {
      tslibData    *data;
@@ -292,13 +291,13 @@ driver_open_device( CoreInputDevice  *device,
      }
 
      /* Fill device information. */
-     info->prefered_id     = DIDID_MOUSE;
-     info->desc.type       = DIDTF_MOUSE;
-     info->desc.caps       = DICAPS_AXES | DICAPS_BUTTONS;
-     info->desc.max_axis   = DIAI_Y;
-     info->desc.max_button = DIBI_LEFT;
-     snprintf( info->desc.name,   DFB_INPUT_DEVICE_DESC_NAME_LENGTH,   "Touchscreen" );
-     snprintf( info->desc.vendor, DFB_INPUT_DEVICE_DESC_VENDOR_LENGTH, "Tslib" );
+     device_info->prefered_id     = DIDID_MOUSE;
+     device_info->desc.type       = DIDTF_MOUSE;
+     device_info->desc.caps       = DICAPS_AXES | DICAPS_BUTTONS;
+     device_info->desc.max_axis   = DIAI_Y;
+     device_info->desc.max_button = DIBI_LEFT;
+     snprintf( device_info->desc.name,   DFB_INPUT_DEVICE_DESC_NAME_LENGTH,   "Touchscreen" );
+     snprintf( device_info->desc.vendor, DFB_INPUT_DEVICE_DESC_VENDOR_LENGTH, "Tslib" );
 
      /* Allocate and fill private data. */
      data = D_CALLOC( 1, sizeof(tslibData) );
