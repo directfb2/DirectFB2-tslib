@@ -1,3 +1,24 @@
+commit f7bea624afacec6d1fad412f164b85256ef8c878
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Fri Mar 24 09:22:21 2023 +0100
+
+    Add pkg-config file (for static build)
+
+commit 4f937c6b1f8f27eec7f73ec5209b8982544ac6ae
+Merge: f0dc2f3 bcf9152
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Fri Jan 13 09:26:10 2023 +0100
+
+    Merge pull request #3 from caramelli/master
+    
+    Meson: Add max-slots option
+
+commit bcf9152c204b04536489456cc11c9ae6efcfafb4
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Fri Jan 13 09:19:56 2023 +0100
+
+    Update ChangeLog
+
 commit 001ed29f134340c6d5a473aa0fff860f7acec02a
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Fri Jan 13 09:19:49 2023 +0100
