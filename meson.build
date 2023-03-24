@@ -19,9 +19,11 @@ project('DirectFB2-tslib', 'c',
 
 directfb_dep = dependency('directfb-internal')
 
-moduledir = directfb_dep.get_pkgconfig_variable('moduledir')
+moduledir = directfb_dep.get_variable(pkgconfig: 'moduledir')
 
 tslib_dep = dependency('tslib')
+
+pkgconfig = import('pkgconfig')
 
 library('directfb_tslib',
         'tslib.c',
@@ -29,3 +31,15 @@ library('directfb_tslib',
         dependencies: [directfb_dep, tslib_dep],
         install: true,
         install_dir: join_paths(moduledir, 'inputdrivers'))
+
+pkgconfig.generate(filebase: 'directfb-inputdriver-tslib',
+                   variables: 'moduledir=' + moduledir,
+                   name: 'DirectFB-inputdriver-tslib',
+                   description: 'tslib input driver',
+                   requires_private: 'tslib',
+                   libraries_private: ['-L${moduledir}/inputdrivers',
+                                       '-Wl,--whole-archive -ldirectfb_tslib -Wl,--no-whole-archive'])
+
+if get_option('default_library') != 'shared'
+  meson.add_install_script('dfb-update-pkgconfig', skip_if_destdir: true)
+endif
